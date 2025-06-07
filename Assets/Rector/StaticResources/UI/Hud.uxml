@@ -4,7 +4,7 @@
     <engine:VisualElement name="header" class="rector-hud-header" style="justify-content: space-between;">
         <engine:VisualElement name="TopLeftInfo" style="flex-grow: 0; flex-direction: row; align-items: flex-end;">
             <engine:VisualElement name="Logo" class="rector-hud-logo" />
-            <engine:Label text="Rector App ver.0.1.0" name="version-label" class="rector-label rector-hud-version-label" />
+            <engine:Label text="SigRector Based on ver.0.1.1" name="version-label" class="rector-label rector-hud-version-label" />
         </engine:VisualElement>
         <engine:VisualElement style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Rector/StaticResources/Textures/SigreniAshTransparent.png?fileID=2800000&amp;guid=6dcb8271a83134e06bbd1795fa76b8fd&amp;type=3#SigreniAshTransparent&quot;); width: 70px; height: 70px; opacity: 1; -unity-background-image-tint-color: rgba(255, 255, 255, 0.57); margin-bottom: -20px;" />
     </engine:VisualElement>

@@ -1,10 +1,10 @@
 :root {
     -unity-font-definition: url("project://database/Assets/Rector/StaticResources/FontAssets/JetBrains_Mono/JetBrainsMono-Thin_SDF.asset?fileID=11400000&guid=b6ce1c5bdf390407a9ff884d29ed1a80&type=2#JetBrainsMono-Thin_SDF");
     --rector-highlighted: rgba(0, 100, 150, 0.2);
-    --rector-text-color: rgba(255, 255, 255, 0.5);
-    --rector-border-color: rgba(255, 255, 255, 0.1);
-    --rector-text-background-color: rgba(0, 0, 0, 0.2);
-    --rector-frame-dark: rgba(0, 0, 0, 0.1);
+    --rector-text-color: rgba(255, 255, 255, 0.5); /* テキストの色 */
+    --rector-border-color: rgba(255, 255, 255, 0.1); /* ノード設置範囲などの枠線 */
+    --rector-text-background-color: rgba(0, 0, 0, 0.2); /* テキスト背景色 */
+    --rector-frame-dark: rgba(0, 0, 0, 0.1); /* シネマスコープできる範囲 */
     color: var(--rector-text-color);
 }
 

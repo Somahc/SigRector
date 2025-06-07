@@ -123,6 +123,31 @@ namespace Rector.UI.GraphPages
                 }).AddTo(disposable);
             State.Where(x => x == GraphPageState.NodeParameter)
                 .Subscribe(_ => nodeParameterModel.Enter()).AddTo(disposable);
+            
+            // 接続元ノードを光らせる
+            State
+                .Pairwise()
+                .Subscribe(states =>
+                {
+                    var previous = states.Previous;
+                    var current = states.Current;
+
+                    if (current == GraphPageState.TargetNodeSelection)
+                    {
+                        if (SelectedNode != null)
+                        {
+                            SelectedNode.NodeView.Root.EnableInClassList("rector-node--connect-source", true);
+                        }
+                    }
+                    else if (previous == GraphPageState.TargetNodeSelection)
+                    {
+                        if (SelectedNode != null)
+                        {
+                            SelectedNode.NodeView.Root.EnableInClassList("rector-node--connect-source", false);
+                        }
+                    }
+                })
+                .AddTo(disposable);
 
             graphInputAction.Navigate.Subscribe(x => CurrentInputHandler.Navigate(x)).AddTo(disposable);
             graphInputAction.Submit.Subscribe(_ => CurrentInputHandler.Submit()).AddTo(disposable);

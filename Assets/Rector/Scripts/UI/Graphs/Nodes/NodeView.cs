@@ -9,7 +9,8 @@ namespace Rector.UI.Graphs.Nodes
 {
     public class NodeView : IDisposable
     {
-        protected readonly VisualElement Root;
+        // protected readonly VisualElement Root;
+        public VisualElement Root { get; }
         protected readonly Label NameLabel;
         protected readonly VisualElement InputSlotList;
         protected readonly VisualElement OutputSlotList;

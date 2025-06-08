@@ -126,28 +126,15 @@ namespace Rector.UI.GraphPages
             
             // 接続元ノードを光らせる
             State
-                .Pairwise()
-                .Subscribe(states =>
+                .Subscribe(current =>
                 {
-                    var previous = states.Previous;
-                    var current = states.Current;
+                    bool shouldHighlight = current == GraphPageState.TargetNodeSelection
+                                        || current == GraphPageState.TargetSlotSelection;
 
-                    if (current == GraphPageState.TargetNodeSelection)
-                    {
-                        if (SelectedNode != null)
-                        {
-                            SelectedNode.NodeView.Root.EnableInClassList("rector-node--connect-source", true);
-                        }
-                    }
-                    else if (previous == GraphPageState.TargetNodeSelection)
-                    {
-                        if (SelectedNode != null)
-                        {
-                            SelectedNode.NodeView.Root.EnableInClassList("rector-node--connect-source", false);
-                        }
-                    }
+                    SelectedNode?.NodeView.Root.EnableInClassList("rector-node--connect-source", shouldHighlight);
                 })
                 .AddTo(disposable);
+
 
             graphInputAction.Navigate.Subscribe(x => CurrentInputHandler.Navigate(x)).AddTo(disposable);
             graphInputAction.Submit.Subscribe(_ => CurrentInputHandler.Submit()).AddTo(disposable);

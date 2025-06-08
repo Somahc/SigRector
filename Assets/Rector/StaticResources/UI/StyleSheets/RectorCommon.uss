@@ -14,6 +14,7 @@
     border-width: 1px;
 }
 
+/* cキーでノード新規作成するときの選択中ノードの強調 */
 .rector-button--focused {
     border-color: var(--rector-border-color);
 }

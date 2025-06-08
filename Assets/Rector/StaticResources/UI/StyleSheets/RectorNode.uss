@@ -106,6 +106,7 @@
     display: flex;
 }
 
+/* c長押しとかでノードとかエッジ消す時のステータス表示 */
 .rector-hold-guide {
     position: absolute;
     flex-shrink: 0;

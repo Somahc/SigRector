@@ -20,14 +20,15 @@
 /* 選択中のノードの背景色 */
 .rector-node--selected > .rector-node-name-label {
     background-color: black;
-    font-size: 16px;
-    padding: 2px 4px;
+    font-size: 14px;
+    padding: 2px 2px;
 }
 
 /* 接続元ノードの強調表示 */ 
-.rector-node--connect-source {
-    border-color: rgb(0, 113, 250);
-    padding: 2px;
+.rector-node--connect-source > .rector-node-name-label {
+    background-color: rgb(190, 190, 190);
+    color: black;
+    -unity-font-style: bold; 
 }
 
 .rector-node-slot-list {
